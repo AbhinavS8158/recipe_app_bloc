@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               return Column(
                 children: [
                  const SizedBox(height: 20,),
-                  CarouselSlider(
+                    CarouselSlider(
                     options: CarouselOptions(
                       height: 200.0,
                       autoPlay: true,
