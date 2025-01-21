@@ -1,5 +1,7 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:bloc_app/controller/api/loginapi.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -26,6 +28,7 @@ class LoginBlockBloc extends Bloc<LoginBlockEvent, LoginBlockState> {
       await authService.login(
           username: event.username, password: event.password);
 
+      // ignore: unused_local_variable
       final prefs = await SharedPreferences.getInstance();
       // await prefs.setString('auth_token');
       emit(LoginSuccess());

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class Recipe {
   final int id;
   final String name;

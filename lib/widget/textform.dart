@@ -13,11 +13,11 @@ class Textform extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: controller,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   label: Text(
                     label,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),

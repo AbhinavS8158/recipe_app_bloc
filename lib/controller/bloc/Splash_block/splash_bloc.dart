@@ -8,7 +8,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<CheckAuthentication>((event, emit) async {
       emit(AuthLoading());
-      await Future.delayed(Duration(seconds: 3)); // Simulate splash delay
+      await Future.delayed(const Duration(seconds: 3)); // Simulate splash delay
       
       final isLoggedIn = await _isUserLoggedIn();
       if (isLoggedIn) {

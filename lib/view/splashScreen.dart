@@ -1,4 +1,6 @@
 
+// ignore_for_file: file_names
+
 import 'package:bloc_app/controller/bloc/Splash_block/splash_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +11,8 @@ import '../controller/bloc/Splash_block/splash_state.dart';
 
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -26,11 +30,11 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Container(
+                child: SizedBox(
                   height: 200,
                   child: Image.asset('asset/images/food-delivery.png')), 
               ),
-              Text('FoodApp',
+              const Text('FoodApp',
               style: TextStyle(
                 fontSize: 50,
                 fontStyle:FontStyle.italic,

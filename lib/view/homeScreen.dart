@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, use_build_context_synchronously
+
 import 'package:bloc_app/controller/api/productapi.dart';
 import 'package:bloc_app/controller/bloc/recipe_block/recipe_bloc.dart';
 import 'package:bloc_app/controller/bloc/recipe_block/recipe_event.dart';

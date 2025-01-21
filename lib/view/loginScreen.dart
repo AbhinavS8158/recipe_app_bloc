@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bloc_app/controller/bloc/login_block/login_block_bloc.dart';
 import 'package:bloc_app/view/homeScreen.dart';
 import 'package:bloc_app/widget/textform.dart';
@@ -18,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           if (state is LoginSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
             );
           } else if (state is Loginfailed) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -84,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                             );
                       },
                       child: state is LoginBlockloading
-                          ? CircularProgressIndicator(color: Colors.white)
+                          ? const CircularProgressIndicator(color: Colors.white)
                           : const Text('Login'),
                     ),
                   ),
