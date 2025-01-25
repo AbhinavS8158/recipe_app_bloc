@@ -1,8 +1,6 @@
 // ignore_for_file: file_names, use_build_context_synchronously
 
-import 'package:bloc_app/controller/api/productapi.dart';
 import 'package:bloc_app/controller/bloc/recipe_block/recipe_bloc.dart';
-import 'package:bloc_app/controller/bloc/recipe_block/recipe_event.dart';
 import 'package:bloc_app/controller/bloc/recipe_block/recipe_state.dart';
 import 'package:bloc_app/widget/gridview.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -26,9 +24,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: BlocProvider(
-        create: (context) => RecipeBloc(ApiService())..add(FetchRecipes()),
-        child: BlocBuilder<RecipeBloc, RecipeState>(
+      body:
+         BlocBuilder<RecipeBloc, RecipeState>(
           builder: (context, state) {
             if (state is RecipeLoading) {
               return const Center(child: CircularProgressIndicator());
@@ -96,9 +93,8 @@ class HomeScreen extends StatelessWidget {
             }
             return const Center(child: Text("No data available."));
           },
-        ),
-      ),
-    );
+         ),
+        );
   }
 
   Future<void> handleLogout(BuildContext context) async {

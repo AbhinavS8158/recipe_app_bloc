@@ -5,7 +5,8 @@ abstract class LoginBlockState {}
 
 class LoginBlockInitial extends LoginBlockState {}
 
-class LoginBlockloading extends LoginBlockState {}
+class LoginBlockloading extends LoginBlockState {
+}
 
 class LoginSuccess extends LoginBlockState {}
 

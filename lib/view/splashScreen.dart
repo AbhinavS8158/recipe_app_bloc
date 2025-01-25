@@ -18,6 +18,7 @@ class SplashScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => AuthBloc()..add(CheckAuthentication()),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is Authenticated) {
@@ -32,15 +33,8 @@ class SplashScreen extends StatelessWidget {
               Center(
                 child: SizedBox(
                   height: 200,
-                  child: Image.asset('asset/images/food-delivery.png')), 
-              ),
-              const Text('FoodApp',
-              style: TextStyle(
-                fontSize: 50,
-                fontStyle:FontStyle.italic,
-                fontWeight:FontWeight.bold,
-                color: Colors.orangeAccent ),
-                )
+                  child: Image.asset('asset/images/Screenshot-2025-01-25-090443 (1).jpg')), 
+              )
             ],
           ),
         ),

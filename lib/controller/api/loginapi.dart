@@ -17,19 +17,23 @@ class AuthService {
         }),
       );
 
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        return data['token']; 
-      } else {
-        throw Exception('Login failed: Invalid username or password');
+       switch (response.statusCode) {
+        case 200:
+          final data = jsonDecode(response.body);
+          return data['token']; 
+        case 400:
+          throw Exception('Bad Request: Invalid input data');
+        case 401:
+          throw Exception('Unauthorized: Invalid username or password');
+        case 403:
+          throw Exception('Forbidden: Access denied');
+        case 500:
+          throw Exception('Server Error: Please try again later');
+        default:
+          throw Exception('Login failed with status code: ${response.statusCode}');
       }
     } catch (error) {
       throw Exception('Error during login: $error');
     }
   }
-  
 }
-
-
-
-
